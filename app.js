@@ -41,6 +41,20 @@ app.get('/cadastro', (req, res) => {
     res.render('produtos', { produtos });
   });  
 
+  app.post('/carrinho', (req, res) => {
+    const { id } = req.body;
+    const produto = produtos.find(produto => produto.id === parseInt(id));
+    if (produto) {
+      carrinho.push(produto);
+    }
+    res.redirect('/carrinho');
+  });
+  
+  app.get('/carrinho', (req, res) => {
+    const total = carrinho.reduce((acc, produto) => acc + produto.preco, 0);
+    res.render('carrinho', { carrinho, total });
+  });  
+
 // Porta do servidor
 const port = 3000;
 app.listen(port, () => {

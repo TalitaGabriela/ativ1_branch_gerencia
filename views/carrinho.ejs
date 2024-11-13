@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carrinho</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Carrinho de Compras</h1>
+    <ul>
+      <% carrinho.forEach(produto => { %>
+        <li><%= produto.nome %> - R$<%= produto.preco %></li>
+      <% }) %>
+    </ul>
+    <p>Total: R$<%= total %></p>
+    <a href="/finalizacao">Finalizar Compra</a>
+  </div>
+</body>
+</html>
