@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finalização de Compra</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Finalização da Compra</h1>
+    <ul>
+      <% carrinho.forEach(produto => { %>
+        <li><%= produto.nome %> - R$<%= produto.preco %></li>
+      <% }) %>
+    </ul>
+    <p>Total: R$<%= total %></p>
+    <form action="/finalizacao" method="POST">
+      <button type="submit">Finalizar Compra</button>
+    </form>
+  </div>
+</body>
+</html>
