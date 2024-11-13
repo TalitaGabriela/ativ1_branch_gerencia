@@ -1,0 +1,16 @@
+{
+  "name": "ativ1_branch_gerencia",
+  "version": "1.0.0",
+  "description": "Oi, que bom que você está aqui para aprender com a gente! 🥰 Neste passo a passo, vamos guiar você pela aplicação de cada funcionalidade de forma simples e divertida. Prepare-se, pois temos **5 funcionalidades** super bacanas, e vamos dividi-las com muito carinho!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}
