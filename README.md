@@ -33,7 +33,7 @@ Agora, vamos ao que interessa! O passo a passo de como rodar a aplicação e usa
 Para começar, você precisa clonar o repositório para sua máquina. Abra o terminal e execute este comando:
 
 bash
-git clone 
+git clone git@github.com:TalitaGabriela/ativ1_branch_gerencia.git
 
 
 Esse comando vai criar uma cópia do projeto na sua máquina. Uhuul! 🎉
