@@ -37,6 +37,10 @@ app.get('/cadastro', (req, res) => {
     }
   });
 
+  app.get('/produtos', (req, res) => {
+    res.render('produtos', { produtos });
+  });  
+
 // Porta do servidor
 const port = 3000;
 app.listen(port, () => {
