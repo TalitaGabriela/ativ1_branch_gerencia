@@ -22,6 +22,21 @@ app.get('/cadastro', (req, res) => {
     res.redirect('/login');
   });
 
+  // Rota de Login de Usuários
+  app.get('/login', (req, res) => {
+    res.render('login');
+  });
+  
+  app.post('/login', (req, res) => {
+    const { email, senha } = req.body;
+    const usuario = usuarios.find(user => user.email === email && user.senha === senha);
+    if (usuario) {
+      res.redirect('/produtos');
+    } else {
+      res.send('Credenciais incorretas!');
+    }
+  });
+
 // Porta do servidor
 const port = 3000;
 app.listen(port, () => {
