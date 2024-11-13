@@ -55,6 +55,16 @@ app.get('/cadastro', (req, res) => {
     res.render('carrinho', { carrinho, total });
   });  
 
+  app.get('/finalizacao', (req, res) => {
+    const total = carrinho.reduce((acc, produto) => acc + produto.preco, 0);
+    res.render('finalizacao', { carrinho, total });
+  });
+  
+  app.post('/finalizacao', (req, res) => {
+    carrinho = [];
+    res.send('Compra finalizada!');
+  });  
+
 // Porta do servidor
 const port = 3000;
 app.listen(port, () => {
