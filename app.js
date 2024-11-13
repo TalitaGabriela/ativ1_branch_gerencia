@@ -13,33 +13,33 @@ app.use(express.urlencoded({ extended: true }));
 
 // Rota de Cadastro de Usuários
 app.get('/cadastro', (req, res) => {
-    res.render('cadastro');
-  });
-  
-  app.post('/cadastro', (req, res) => {
-    const { nome, email, senha } = req.body;
-    usuarios.push({ nome, email, senha });
-    res.redirect('/login');
-  });
+  res.render('cadastro');
+});
 
-  // Rota de Login de Usuários
-  app.get('/login', (req, res) => {
-    res.render('login');
-  });
-  
-  app.post('/login', (req, res) => {
-    const { email, senha } = req.body;
-    const usuario = usuarios.find(user => user.email === email && user.senha === senha);
-    if (usuario) {
-      res.redirect('/produtos');
-    } else {
-      res.send('Credenciais incorretas!');
-    }
-  });
+app.post('/cadastro', (req, res) => {
+  const { nome, email, senha } = req.body;
+  usuarios.push({ nome, email, senha });
+  res.redirect('/login');
+});
 
-  app.get('/produtos', (req, res) => {
-    res.render('produtos', { produtos });
-  });  
+// Rota de Login de Usuários
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.post('/login', (req, res) => {
+  const { email, senha } = req.body;
+  const usuario = usuarios.find(user => user.email === email && user.senha === senha);
+  if (usuario) {
+    res.redirect('/produtos');
+  } else {
+    res.send('Credenciais incorretas!');
+  }
+});
+
+app.get('/produtos', (req, res) => {
+  res.render('produtos', { produtos });
+});
 
   app.post('/carrinho', (req, res) => {
     const { id } = req.body;
